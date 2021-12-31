@@ -7,6 +7,7 @@ public class UserModel {
     private String firstName;
     private String lastName;
     private String userNumber;
+    private String userName;
     private String title;
     private String email;
     private String state;
@@ -16,11 +17,12 @@ public class UserModel {
     private Date dob;
     private AddressModel address;
 
-    public UserModel(Long webId, String firstName, String lastName, String userNumber, String title, String email, String state, String company, String carrierNetwork, String gender, Date dob, AddressModel address) {
+    public UserModel(Long webId, String firstName, String lastName, String userNumber, String userName, String title, String email, String state, String company, String carrierNetwork, String gender, Date dob, AddressModel address) {
         this.webId = webId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userNumber = userNumber;
+        this.userName = userName;
         this.title = title;
         this.email = email;
         this.state = state;
@@ -29,6 +31,10 @@ public class UserModel {
         this.gender = gender;
         this.dob = dob;
         this.address = address;
+    }
+
+    public Long getWebId() {
+        return webId;
     }
 
     public String getUserNumber() {
@@ -123,4 +129,11 @@ public class UserModel {
         this.address = address;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 }

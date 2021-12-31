@@ -17,6 +17,7 @@ public class UserController {
                 "Test",
                 "Model",
                 "9898",
+                "TEST MODEL",
                 "Hair Stylisy",
                 "Public@email.com",
                 "California",
