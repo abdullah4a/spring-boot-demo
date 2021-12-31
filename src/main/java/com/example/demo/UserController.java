@@ -24,9 +24,12 @@ public class UserController {
                 "+92",
                 "Male",
                 new Date(),
-                "",
-                "",
-                new AddressModel(2l,"street"));
+                new AddressModel(2980l,
+                        "street",
+                        "USA",
+                        "California",
+                        "ABC"
+                        ));
     }
 
     @PostMapping("/")

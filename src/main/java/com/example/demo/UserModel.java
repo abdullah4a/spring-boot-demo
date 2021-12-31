@@ -14,11 +14,9 @@ public class UserModel {
     private String carrierNetwork;
     private String gender;
     private Date dob;
-    private String country;
-    private String city;
     private AddressModel address;
 
-    public UserModel(Long webId, String firstName, String lastName, String userNumber, String title, String email, String state, String company, String carrierNetwork, String gender, Date dob, String country, String city, AddressModel address) {
+    public UserModel(Long webId, String firstName, String lastName, String userNumber, String title, String email, String state, String company, String carrierNetwork, String gender, Date dob, AddressModel address) {
         this.webId = webId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -30,8 +28,6 @@ public class UserModel {
         this.carrierNetwork = carrierNetwork;
         this.gender = gender;
         this.dob = dob;
-        this.country = country;
-        this.city = city;
         this.address = address;
     }
 
@@ -97,25 +93,6 @@ public class UserModel {
 
     public void setDob(Date dob) {
         this.dob = dob;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-    public Long getWebId() {
-        return webId;
     }
 
     public void setWebId(Long webId) {
