@@ -33,4 +33,8 @@ public class BranchController {
                         "ABC"
                 )));
     }
+    @DeleteMapping("/{id}")
+    public Boolean deleteById(@PathVariable("id") Long webId) {
+        return true;
+    }
 }
