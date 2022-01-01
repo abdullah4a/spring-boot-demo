@@ -11,12 +11,12 @@ import java.util.List;
 @RequestMapping("/client")
 public class ClientController {
     @PostMapping("/")
-    public ClientModel post(@RequestBody ClientModel model){
+    public ClientModel post(@RequestBody ClientModel model) {
         return model;
     }
 
     @GetMapping("/list")
-    public List<ClientModel> getAll(){
+    public List<ClientModel> getAll() {
         return Collections.singletonList(new ClientModel(1l,
                 "Test",
                 "654654",
@@ -40,5 +40,10 @@ public class ClientController {
     @DeleteMapping("/{id}")
     public Boolean deleteById(@PathVariable("id") Long webId) {
         return true;
+    }
+
+    @PutMapping("/{id}")
+    public ClientModel Update(@PathVariable("id") Long webId, @RequestBody ClientModel model) {
+        return model;
     }
 }
