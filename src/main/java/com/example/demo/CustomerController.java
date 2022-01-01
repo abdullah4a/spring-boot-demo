@@ -43,7 +43,7 @@ public class CustomerController {
     }
 
     @PutMapping("/{id}")
-    public CustomerModel Update(@PathVariable("id") Long webId, @RequestBody CustomerModel model) {
+    public CustomerModel update(@PathVariable("id") Long webId, @RequestBody CustomerModel model) {
         return model;
     }
 

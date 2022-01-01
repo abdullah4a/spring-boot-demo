@@ -45,7 +45,7 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public UserModel Update(@PathVariable("id") Long webId, @RequestBody UserModel model) {
+    public UserModel update(@PathVariable("id") Long webId, @RequestBody UserModel model) {
         return model;
     }
 

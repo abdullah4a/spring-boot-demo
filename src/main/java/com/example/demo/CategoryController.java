@@ -39,7 +39,7 @@ public class CategoryController {
     }
 
     @PutMapping("/{id}")
-    public CategoryModel Update(@PathVariable("id") Long webId, @RequestBody CategoryModel model) {
+    public CategoryModel update(@PathVariable("id") Long webId, @RequestBody CategoryModel model) {
         return model;
     }
 }

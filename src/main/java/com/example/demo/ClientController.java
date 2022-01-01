@@ -43,7 +43,7 @@ public class ClientController {
     }
 
     @PutMapping("/{id}")
-    public ClientModel Update(@PathVariable("id") Long webId, @RequestBody ClientModel model) {
+    public ClientModel update(@PathVariable("id") Long webId, @RequestBody ClientModel model) {
         return model;
     }
 

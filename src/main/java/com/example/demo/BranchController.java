@@ -60,7 +60,7 @@ public class BranchController {
     }
 
     @PutMapping("/{id}")
-    public BranchModel Update(@PathVariable("id") Long webId, @RequestBody BranchModel model) {
+    public BranchModel update(@PathVariable("id") Long webId, @RequestBody BranchModel model) {
         return model;
     }
 }
