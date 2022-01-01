@@ -29,16 +29,9 @@ public class BranchController {
                         "ABC"
                 ));
     }
-
-
-    public List<String> getAll(){
-        return Collections.singletonList("Hello world");
-    }
-
     @PostMapping("/")
-    public List<String> getAll(@RequestBody String string){
-        return List.of("Hello world", string);
+    public BranchModel post(@RequestBody BranchModel model){
+        return model;
     }
-
 
 }
