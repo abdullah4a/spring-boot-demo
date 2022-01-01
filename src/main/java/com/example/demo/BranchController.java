@@ -37,4 +37,9 @@ public class BranchController {
     public Boolean deleteById(@PathVariable("id") Long webId) {
         return true;
     }
+
+    @PutMapping("/{id}")
+    public BranchModel Update(@PathVariable("id") Long webId, @RequestBody BranchModel model) {
+        return model;
+    }
 }
