@@ -35,7 +35,6 @@ public class UserController {
 
     @PostMapping("/")
     public UserModel post(@RequestBody UserModel model){
-//        userModel(model.setWebId());
         return model;
     }
 
