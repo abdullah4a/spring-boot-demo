@@ -11,9 +11,10 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
     private UserModel userModel;
+
     @GetMapping("/list")
-    public UserModel get(){
-        return new UserModel(1l,
+    public List<UserModel> get() {
+        return Collections.singletonList(new UserModel(1l,
                 "Test",
                 "Model",
                 "9898",
@@ -30,11 +31,11 @@ public class UserController {
                         "USA",
                         "California",
                         "ABC"
-                        ));
+                )));
     }
 
     @PostMapping("/")
-    public UserModel post(@RequestBody UserModel model){
+    public UserModel post(@RequestBody UserModel model) {
         return model;
     }
 
@@ -43,4 +44,8 @@ public class UserController {
         return true;
     }
 
+    @PutMapping("/{id}")
+    public UserModel Update(@PathVariable("id") Long webId, @RequestBody UserModel model) {
+        return model;
+    }
 }
