@@ -46,4 +46,24 @@ public class CustomerController {
     public CustomerModel Update(@PathVariable("id") Long webId, @RequestBody CustomerModel model) {
         return model;
     }
+
+    @GetMapping("/{id}")
+    public CustomerModel getById(@PathVariable("id") Long webId) {
+        return new CustomerModel(1l,
+                "TestModel",
+                "3213121",
+                "Test",
+                "Model",
+                new Date(),
+                "TEST @ TEST.COM",
+                "Male",
+                "+9265146",
+                true,
+                new AddressModel(2980l,
+                        "street",
+                        "USA",
+                        "California",
+                        "ABC"
+                ));
+    };
 }
