@@ -46,4 +46,27 @@ public class ClientController {
     public ClientModel Update(@PathVariable("id") Long webId, @RequestBody ClientModel model) {
         return model;
     }
+
+    @GetMapping("/{id}")
+    public ClientModel getById(@PathVariable("id") Long webId) {
+        return new ClientModel(
+                1l,
+                "Test",
+                "654654",
+                "TEST",
+                "Model",
+                "Model for TEST",
+                "TEST@test.com",
+                "NONE",
+                "+6465421",
+                "testBranch.com",
+                new Date(),
+                true,
+                new AddressModel(2980l,
+                        "street",
+                        "USA",
+                        "California",
+                        "ABC"
+                ));
+    }
 }
