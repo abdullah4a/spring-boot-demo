@@ -26,4 +26,9 @@ public class CategoryController {
     public Boolean deleteById(@PathVariable("id") Long webId) {
         return true;
     }
+
+    @PutMapping("/{id}")
+    public CategoryModel Update(@PathVariable("id") Long webId, @RequestBody CategoryModel model) {
+        return model;
+    }
 }
