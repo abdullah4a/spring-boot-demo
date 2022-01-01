@@ -10,7 +10,7 @@ import java.util.List;
 //TODO path to the test
 @RequestMapping("/user")
 public class UserController {
-
+    private UserModel userModel;
     @GetMapping("/list")
     public UserModel get(){
         return new UserModel(1l,
@@ -34,8 +34,9 @@ public class UserController {
     }
 
     @PostMapping("/")
-    public List<String> getAll(@RequestBody String string){
-        return List.of("Hello world", string);
+    public UserModel post(@RequestBody UserModel model){
+//        userModel(model.setWebId());
+        return model;
     }
 
 

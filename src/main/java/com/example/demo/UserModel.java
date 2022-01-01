@@ -33,10 +33,6 @@ public class UserModel {
         this.address = address;
     }
 
-    public Long getWebId() {
-        return webId;
-    }
-
     public String getUserNumber() {
         return userNumber;
     }
