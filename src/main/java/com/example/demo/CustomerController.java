@@ -12,8 +12,8 @@ import java.util.List;
 public class CustomerController {
 
     @GetMapping("/list")
-    public CustomerModel get(){
-        return new CustomerModel(1l,
+    public List<CustomerModel> getAll(){
+        return Collections.singletonList(new CustomerModel(1l,
                 "TestModel",
                 "3213121",
                 "Test",
@@ -28,7 +28,7 @@ public class CustomerController {
                         "USA",
                         "California",
                         "ABC"
-                ));
+                )));
     }
 
 
