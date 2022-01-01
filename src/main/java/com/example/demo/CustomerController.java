@@ -12,7 +12,7 @@ import java.util.List;
 public class CustomerController {
 
     @GetMapping("/list")
-    public List<CustomerModel> getAll(){
+    public List<CustomerModel> getAll() {
         return Collections.singletonList(new CustomerModel(1l,
                 "TestModel",
                 "3213121",
@@ -33,7 +33,7 @@ public class CustomerController {
 
 
     @PostMapping("/")
-    public CustomerModel post(@RequestBody CustomerModel model){
+    public CustomerModel post(@RequestBody CustomerModel model) {
         return model;
     }
 
@@ -42,4 +42,8 @@ public class CustomerController {
         return true;
     }
 
+    @PutMapping("/{id}")
+    public CustomerModel Update(@PathVariable("id") Long webId, @RequestBody CustomerModel model) {
+        return model;
+    }
 }
