@@ -11,17 +11,28 @@ import java.util.List;
 public class CategoryController {
 
     @GetMapping("/list")
-    public List<CategoryModel> getAll(){
+    public List<CategoryModel> getAll() {
         return Collections.singletonList(new CategoryModel(
                 1l,
                 "3213",
                 "TEST",
                 "MODEL"));
     }
+
+    //Trying New Methods
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public CategoryModel getById(@PathVariable("id") Long webId) {
+        return new CategoryModel(1l,
+                "3213",
+                "TEST",
+                "MODEL");
+    }
+
     @PostMapping("/")
-    public CategoryModel post(@RequestBody CategoryModel model){
+    public CategoryModel post(@RequestBody CategoryModel model) {
         return model;
     }
+
     @DeleteMapping("/{id}")
     public Boolean deleteById(@PathVariable("id") Long webId) {
         return true;
