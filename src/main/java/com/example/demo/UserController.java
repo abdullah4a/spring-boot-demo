@@ -48,4 +48,26 @@ public class UserController {
     public UserModel Update(@PathVariable("id") Long webId, @RequestBody UserModel model) {
         return model;
     }
+
+    @GetMapping("/{id}")
+    public UserModel getById(@PathVariable("id") Long webId) {
+        return new UserModel(1l,
+                "Test",
+                "Model",
+                "9898",
+                "TEST MODEL",
+                "Hair Stylisy",
+                "Public@email.com",
+                "California",
+                "N/A",
+                "+92",
+                "Male",
+                new Date(),
+                new AddressModel(2980l,
+                        "street",
+                        "USA",
+                        "California",
+                        "ABC"
+                ));
+    }
 }
