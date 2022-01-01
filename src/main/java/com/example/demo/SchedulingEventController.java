@@ -11,12 +11,12 @@ import java.util.List;
 @RequestMapping("/schedule/event")
 public class SchedulingEventController {
     @PostMapping("/")
-    public SchedulingEventModel post(@RequestBody SchedulingEventModel model) {
+    public SchedulingEventModel postNonRecurring(@RequestBody SchedulingEventModel model) {
         return model;
     }
 
     @GetMapping("/list")
-    public List<SchedulingEventModel> getAll() {
+    public List<SchedulingEventModel> getAllNonRecurring() {
         return Collections.singletonList(new SchedulingEventModel(1l,
                 "New event",
                 "333",
@@ -38,17 +38,17 @@ public class SchedulingEventController {
     }
 
     @DeleteMapping("/{id}")
-    public Boolean deleteById(@PathVariable("id") Long webId) {
+    public Boolean deleteNonRecurring(@PathVariable("id") Long webId) {
         return true;
     }
 
     @PutMapping("/{id}")
-    public SchedulingEventModel Update(@PathVariable("id") Long webId, @RequestBody SchedulingEventModel model) {
+    public SchedulingEventModel updateNonRecurring(@PathVariable("id") Long webId, @RequestBody SchedulingEventModel model) {
         return model;
     }
 
     @GetMapping("/{id}")
-    public SchedulingEventModel getById(@PathVariable("id") Long webId) {
+    public SchedulingEventModel getByIdNonRecurring(@PathVariable("id") Long webId) {
         return new SchedulingEventModel(
                 1l,
                 "New event",
