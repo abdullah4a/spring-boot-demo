@@ -9,10 +9,14 @@ import java.util.List;
 
 @RequestMapping("/branch")
 public class BranchController {
+    @PostMapping("/")
+    public BranchModel post(@RequestBody BranchModel model){
+        return model;
+    }
 
     @GetMapping("/list")
-    public BranchModel get(){
-        return new BranchModel(1l,
+    public List<BranchModel> getAll(){
+        return Collections.singletonList(new BranchModel(1l,
                 "Test",
                 "Model",
                 "3213121",
@@ -27,11 +31,6 @@ public class BranchController {
                         "USA",
                         "California",
                         "ABC"
-                ));
+                )));
     }
-    @PostMapping("/")
-    public BranchModel post(@RequestBody BranchModel model){
-        return model;
-    }
-
 }
