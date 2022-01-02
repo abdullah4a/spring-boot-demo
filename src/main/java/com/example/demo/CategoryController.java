@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
@@ -22,10 +23,20 @@ public class CategoryController {
     //Trying New Methods
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public CategoryModel getById(@PathVariable("id") Long webId) {
-        return new CategoryModel(1l,
-                "3213",
-                "TEST",
-                "MODEL");
+        CategoryModel model = null;
+       try
+       {
+           if (webId==model.getWebId()){
+               return new CategoryModel(webId,
+                       "3213",
+                       "TEST",
+                       "MODEL");
+           }
+       }catch (ExceptionHandler exc) {
+           throw new ExceptionHandler(
+                   "Foo Not Found", exc);
+       }
+       return null;
     }
 
     @PostMapping("/")
