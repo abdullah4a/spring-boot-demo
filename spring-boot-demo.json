@@ -1,0 +1,808 @@
+{
+	"info": {
+		"_postman_id": "f9c47bd7-97a4-489a-88d3-6a5cc9dcbe7f",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Branches",
+			"item": [
+				{
+					"name": "Getbranch_list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/branch/list",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"branch",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostBranch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n        \"webId\": 1,\n        \"fullBranchName\": \"Test\",\n        \"branchNumber\": \"Model\",\n        \"companyId\": \"3213121\",\n        \"faxNumber\": \"+6465421\",\n        \"description\": \"TEST BRANCH HELD HERE\",\n        \"email\": \"TEST @ TEST.COM\",\n        \"url\": \"testBranch.com\",\n        \"phoneNumber\": \"+9265146\",\n        \"active\": true,\n        \"address\": {\n            \"street\": \"street\",\n            \"postalCode\": 2980,\n            \"country\": \"USA\",\n            \"city\": \"California\",\n            \"state\": \"ABC\"\n        }\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/branch/",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"branch",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DleteBranches",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/branch/1",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"branch",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateBranch",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"webId\": 1,\n        \"fullBranchName\": \"Test\",\n        \"branchNumber\": \"Model\",\n        \"companyId\": \"3213121\",\n        \"faxNumber\": \"+6465421\",\n        \"description\": \"TEST BRANCH HELD HERE\",\n        \"email\": \"TEST @ TEST.COM\",\n        \"url\": \"testBranch.com\",\n        \"phoneNumber\": \"+9265146\",\n        \"active\": true,\n        \"address\": {\n            \"street\": \"street\",\n            \"postalCode\": 2980,\n            \"country\": \"USA\",\n            \"city\": \"California\",\n            \"state\": \"ABC\"\n        }\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/branch/1",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"branch",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBranchById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/branch/1",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"branch",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "GetUser_List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/user/list",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Test\",\n    \"lastName\": \"Model\",\n    \"userNumber\": \"9898\",\n    \"userName\": \"TEST MODEL\",\n    \"title\": \"Hair Stylisy\",\n    \"email\": \"Public@email.com\",\n    \"state\": \"California\",\n    \"company\": \"N/A\",\n    \"carrierNetwork\": \"+92\",\n    \"gender\": \"Male\",\n    \"dob\": \"2022-01-01T08:21:27.726+00:00\",\n    \"address\": {\n        \"street\": \"street\",\n        \"postalCode\": 2980,\n        \"country\": \"USA\",\n        \"city\": \"California\",\n        \"state\": \"ABC\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/user/",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/user/1",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Test\",\n    \"lastName\": \"Model\",\n    \"userNumber\": \"9898\",\n    \"userName\": \"TEST MODEL\",\n    \"title\": \"Hair Stylisy\",\n    \"email\": \"Public@email.com\",\n    \"state\": \"California\",\n    \"company\": \"N/A\",\n    \"carrierNetwork\": \"+92\",\n    \"gender\": \"Male\",\n    \"dob\": \"2022-01-01T13:27:49.274+00:00\",\n    \"address\": {\n        \"street\": \"street\",\n        \"postalCode\": 2980,\n        \"country\": \"USA\",\n        \"city\": \"California\",\n        \"state\": \"ABC\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/user/1",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/user/1",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "GetCategory_List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/category/list",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"category",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostCategory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"webId\": 1,\n        \"categoryNumber\": \"3213\",\n        \"categoryName\": \"TEST\",\n        \"subCategory\": \"MODEL\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/category/",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCategory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/category/1",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCategory",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"webId\": 1,\n        \"categoryNumber\": \"3213\",\n        \"categoryName\": \"TEST\",\n        \"subCategory\": \"MODEL\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/category/1",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCategoryById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/category/1",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "GetCustomer_list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/customer/list",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"customer",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"webId\": 1,\n        \"customerName\": \"TestModel\",\n        \"customerNumber\": \"3213121\",\n        \"firstName\": \"Test\",\n        \"lastName\": \"Model\",\n        \"dob\": \"2022-01-01T10:59:53.103+00:00\",\n        \"email\": \"TEST @ TEST.COM\",\n        \"gender\": \"Male\",\n        \"phoneNumber\": \"+9265146\",\n        \"active\": true,\n        \"address\": {\n            \"street\": \"street\",\n            \"postalCode\": 2980,\n            \"country\": \"USA\",\n            \"city\": \"California\",\n            \"state\": \"ABC\"\n        }\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/customer/",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"customer",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCustomer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/customer/1",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCustomer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"webId\": 1,\n        \"customerName\": \"TestModel\",\n        \"customerNumber\": \"3213121\",\n        \"firstName\": \"Test\",\n        \"lastName\": \"Model\",\n        \"dob\": \"2022-01-01T13:32:30.597+00:00\",\n        \"email\": \"TEST @ TEST.COM\",\n        \"gender\": \"Male\",\n        \"phoneNumber\": \"+9265146\",\n        \"active\": true,\n        \"address\": {\n            \"street\": \"street\",\n            \"postalCode\": 2980,\n            \"country\": \"USA\",\n            \"city\": \"California\",\n            \"state\": \"ABC\"\n        }\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/customer/1",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCustomerById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/customer/1",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "GetClient_List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/client/list",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"client",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostClient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"webId\": 1,\n        \"businessName\": \"Test\",\n        \"clientNumber\": \"654654\",\n        \"firstName\": \"TEST\",\n        \"lastName\": \"Model\",\n        \"description\": \"Model for TEST\",\n        \"email\": \"TEST@test.com\",\n        \"clientName\": \"NONE\",\n        \"phoneNumber\": \"+6465421\",\n        \"gender\": \"testBranch.com\",\n        \"dob\": \"2022-01-01T12:11:39.103+00:00\",\n        \"active\": true,\n        \"address\": {\n            \"street\": \"street\",\n            \"postalCode\": 2980,\n            \"country\": \"USA\",\n            \"city\": \"California\",\n            \"state\": \"ABC\"\n        }\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/client/",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"client",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteClient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/client/1",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"client",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateClient",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"webId\": 1,\n        \"businessName\": \"Test\",\n        \"clientNumber\": \"654654\",\n        \"firstName\": \"TEST\",\n        \"lastName\": \"Model\",\n        \"description\": \"Model for TEST\",\n        \"email\": \"TEST@test.com\",\n        \"clientName\": \"NONE\",\n        \"phoneNumber\": \"+6465421\",\n        \"gender\": \"testBranch.com\",\n        \"dob\": \"2022-01-01T13:36:08.225+00:00\",\n        \"active\": true,\n        \"address\": {\n            \"street\": \"street\",\n            \"postalCode\": 2980,\n            \"country\": \"USA\",\n            \"city\": \"California\",\n            \"state\": \"ABC\"\n        }\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/client/1",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"client",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetClientById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://sample-config.herokuapp.com/client/1",
+							"protocol": "http",
+							"host": [
+								"sample-config",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"client",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Scheduling",
+			"item": [
+				{
+					"name": "Non Recurring Event",
+					"item": [
+						{
+							"name": "GetNonRecurringEvent_List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://sample-config.herokuapp.com/schedule/event/list",
+									"protocol": "http",
+									"host": [
+										"sample-config",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"schedule",
+										"event",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostNonRecurringEvent",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"webId\": 1,\n        \"title\": \"New event\",\n        \"branchId\": \"333\",\n        \"eventType\": \"TEST\",\n        \"startDate\": \"2022-01-01T23:33:36.409+00:00\",\n        \"isAllDay\": false,\n        \"isRecurring\": false,\n        \"duration\": \"TEST\",\n        \"recurringPattern\": \"\",\n        \"exceptionDates\": \"\",\n        \"endDate\": \"2022-01-01T23:33:36.409+00:00\",\n        \"webUserId\": 1,\n        \"customerId\": \"TEST\",\n        \"customerNumber\": \"TEST\",\n        \"customerName\": \"TEST\",\n        \"workOrderId\": \"TEST\",\n        \"workOrderName\": \"TEST\",\n        \"workOrderPriority\": \"TEST\"\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://sample-config.herokuapp.com/schedule/event/",
+									"protocol": "http",
+									"host": [
+										"sample-config",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"schedule",
+										"event",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateNonRecurringEvent",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"webId\": 1,\n        \"title\": \"New event\",\n        \"branchId\": \"333\",\n        \"eventType\": \"TEST\",\n        \"startDate\": \"2022-01-01T23:39:05.320+00:00\",\n        \"isAllDay\": false,\n        \"isRecurring\": false,\n        \"duration\": \"TEST\",\n        \"recurringPattern\": \"\",\n        \"exceptionDates\": \"\",\n        \"endDate\": \"2022-01-01T23:39:05.320+00:00\",\n        \"webUserId\": 1,\n        \"customerId\": \"TEST\",\n        \"customerNumber\": \"TEST\",\n        \"customerName\": \"TEST\",\n        \"workOrderId\": \"TEST\",\n        \"workOrderName\": \"TEST\",\n        \"workOrderPriority\": \"TEST\"\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://sample-config.herokuapp.com/schedule/event/1",
+									"protocol": "http",
+									"host": [
+										"sample-config",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"schedule",
+										"event",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteNonRecurringEvent",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://sample-config.herokuapp.com/schedule/event/1",
+									"protocol": "http",
+									"host": [
+										"sample-config",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"schedule",
+										"event",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetByIdNonRecurringEvent",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://sample-config.herokuapp.com/schedule/event/1",
+									"protocol": "http",
+									"host": [
+										"sample-config",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"schedule",
+										"event",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
