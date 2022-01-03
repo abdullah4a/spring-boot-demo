@@ -41,33 +41,59 @@ public class UserController {
 
     @DeleteMapping("/{id}")
     public Boolean deleteById(@PathVariable("id") Long webId) {
-        return true;
+        UserModel model = null;
+        try {
+            if (webId == model.getWebId()) {
+                return true;
+            }
+        } catch (ExceptionHandler exc) {
+            throw new ExceptionHandler("User Id Not Found", exc);
+        }
+        return false;
     }
 
     @PutMapping("/{id}")
     public UserModel update(@PathVariable("id") Long webId, @RequestBody UserModel model) {
-        return model;
+        UserModel userModel = null;
+        try {
+            if (webId == userModel.getWebId()) {
+//                TODO Updating will go here
+                return model;
+            }
+        } catch (ExceptionHandler exc) {
+            throw new ExceptionHandler("User Id Not Found", exc);
+        }
+        return null;
     }
 
     @GetMapping("/{id}")
     public UserModel getById(@PathVariable("id") Long webId) {
-        return new UserModel(1l,
-                "Test",
-                "Model",
-                "9898",
-                "TEST MODEL",
-                "Hair Stylisy",
-                "Public@email.com",
-                "California",
-                "N/A",
-                "+92",
-                "Male",
-                new Date(),
-                new AddressModel(2980l,
-                        "street",
-                        "USA",
+        UserModel model = null;
+        try {
+            if (webId == model.getWebId()) {
+                return new UserModel(1l,
+                        "Test",
+                        "Model",
+                        "9898",
+                        "TEST MODEL",
+                        "Hair Stylisy",
+                        "Public@email.com",
                         "California",
-                        "ABC"
-                ));
+                        "N/A",
+                        "+92",
+                        "Male",
+                        new Date(),
+                        new AddressModel(2980l,
+                                "street",
+                                "USA",
+                                "California",
+                                "ABC"
+                        ));
+            }
+        } catch (ExceptionHandler exc) {
+            throw new ExceptionHandler("User Id Not Found", exc);
+        }
+        return null;
+
     }
 }

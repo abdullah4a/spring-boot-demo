@@ -3,6 +3,7 @@ package com.example.demo;
 import java.util.Date;
 
 public class UserModel {
+
     private Long webId;
     private String firstName;
     private String lastName;
@@ -127,6 +128,9 @@ public class UserModel {
 
     public String getUserName() {
         return userName;
+    }
+    public Long getWebId() {
+        return webId;
     }
 
     public void setUserName(String userName) {
