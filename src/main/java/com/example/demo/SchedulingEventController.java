@@ -69,39 +69,39 @@ public class SchedulingEventController {
                 "TEST",
                 "TEST");
     }
-    @GetMapping("/recurrence/list")
-    public List<SchedulingEventModel> getAllRecurring() {
-        return Collections.singletonList(new SchedulingEventModel(1l,
-                "New event",
-                "333",
-                "TEST",
-                new Date(),
-                false,
-                true,
-                "TEST",
-                "",
-                "",
-                new Date(),
-                1l,
-                "TEST",
-                "TEST",
-                "TEST",
-                "TEST",
-                "TEST",
-                "TEST",
-                new SchedulingRecurrenceEventModel(
-                        1l,
-                        new String[]{""},
-                        "",
-                        1l,
-                        true,
-                        new Long[]{1l},
-                        1l,
-                        "",
-                        new Date(),
-                        new Date()
-                )
-        ));
-    }
+//    @GetMapping("/recurrence/list")
+//    public List<SchedulingEventModel> getAllRecurring() {
+//        return Collections.singletonList(new SchedulingEventModel(1l,
+//                "New event",
+//                "333",
+//                "TEST",
+//                new Date(),
+//                false,
+//                true,
+//                "TEST",
+//                "",
+//                "",
+//                new Date(),
+//                1l,
+//                "TEST",
+//                "TEST",
+//                "TEST",
+//                "TEST",
+//                "TEST",
+//                "TEST",
+//                new SchedulingRecurrenceEventModel(
+//                        1l,
+//                        new String[]{""},
+//                        "",
+//                        1l,
+//                        true,
+//                        new Long[]{1l},
+//                        1l,
+//                        "",
+//                        new Date(),
+//                        new Date()
+//                )
+//        ));
+//    }
 }
 
