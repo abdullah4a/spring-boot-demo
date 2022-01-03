@@ -22,6 +22,30 @@ public class SchedulingEventModel {
     private String workOrderId;
     private String workOrderName;
     private String workOrderPriority;
+    private SchedulingRecurrenceEventModel recurrenceEventModel;
+
+    public SchedulingEventModel(Long webId, String title, String branchId, String eventType, Date startDate, Boolean isAllDay, Boolean isRecurring, String duration, String recurringPattern, String exceptionDates, Date endDate, Long webUserId, String customerId, String customerNumber, String customerName, String workOrderId, String workOrderName, String workOrderPriority, SchedulingRecurrenceEventModel recurrenceEventModel) {
+        this.webId = webId;
+        this.title = title;
+        this.branchId = branchId;
+        this.eventType = eventType;
+        this.startDate = startDate;
+        this.isAllDay = isAllDay;
+        this.isRecurring = isRecurring;
+        this.duration = duration;
+        this.recurringPattern = recurringPattern;
+        this.exceptionDates = exceptionDates;
+        this.endDate = endDate;
+        this.webUserId = webUserId;
+        this.customerId = customerId;
+        this.customerNumber = customerNumber;
+        this.customerName = customerName;
+        this.workOrderId = workOrderId;
+        this.workOrderName = workOrderName;
+        this.workOrderPriority = workOrderPriority;
+        this.recurrenceEventModel = recurrenceEventModel;
+    }
+
 
     public SchedulingEventModel(Long webId, String title, String branchId, String eventType, Date startDate, Boolean isAllDay, Boolean isRecurring, String duration, String recurringPattern, String exceptionDates, Date endDate, Long webUserId, String customerId, String customerNumber, String customerName, String workOrderId, String workOrderName, String workOrderPriority) {
         this.webId = webId;
