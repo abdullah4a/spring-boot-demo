@@ -27,7 +27,7 @@ public class CategoryController {
        try
        {
            if (webId==model.getWebId()){
-               return new CategoryModel(webId,
+               return new CategoryModel(1l,
                        "3213",
                        "TEST",
                        "MODEL");
