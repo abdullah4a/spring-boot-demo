@@ -34,7 +34,7 @@ public class CategoryController {
            }
        }catch (ExceptionHandler exc) {
            throw new ExceptionHandler(
-                   "Foo Not Found", exc);
+                   "Category Not Found", exc);
        }
        return null;
     }
