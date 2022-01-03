@@ -39,12 +39,29 @@ public class CustomerController {
 
     @DeleteMapping("/{id}")
     public Boolean deleteById(@PathVariable("id") Long webId) {
-        return true;
+        CustomerModel model=null;
+        try {
+            if (webId == model.getWebId()) {
+                return true;
+            }
+        } catch (ExceptionHandler exc) {
+            throw new ExceptionHandler("Customer Id Not Found", exc);
+        }
+        return false;
     }
 
     @PutMapping("/{id}")
     public CustomerModel update(@PathVariable("id") Long webId, @RequestBody CustomerModel model) {
-        return model;
+        CustomerModel customerModel=null;
+        try {
+            if (webId == customerModel.getWebId()) {
+//                TODO updating of model will go here
+                return model;
+            }
+        } catch (ExceptionHandler exc) {
+            throw new ExceptionHandler("Customer Id Not Found", exc);
+        }
+        return null;
     }
 
     @GetMapping("/{id}")
