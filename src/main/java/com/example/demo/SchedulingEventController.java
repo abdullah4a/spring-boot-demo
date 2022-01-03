@@ -39,35 +39,59 @@ public class SchedulingEventController {
 
     @DeleteMapping("/{id}")
     public Boolean deleteNonRecurring(@PathVariable("id") Long webId) {
-        return true;
+        SchedulingEventModel model = null;
+        try {
+            if (webId == model.getWebId()) {
+                return true;
+            }
+        } catch (ExceptionHandler exc) {
+            throw new ExceptionHandler("Appointment Id Not Found", exc);
+        }
+        return false;
     }
 
     @PutMapping("/{id}")
     public SchedulingEventModel updateNonRecurring(@PathVariable("id") Long webId, @RequestBody SchedulingEventModel model) {
-        return model;
+        SchedulingEventModel schedulingEventModel = null;
+        try {
+            if (webId == schedulingEventModel.getWebId()) {
+                return model;
+            }
+        } catch (ExceptionHandler exc) {
+            throw new ExceptionHandler("Appointment Id Not Found", exc);
+        }
+        return null;
     }
 
     @GetMapping("/{id}")
     public SchedulingEventModel getByIdNonRecurring(@PathVariable("id") Long webId) {
-        return new SchedulingEventModel(
-                1l,
-                "New event",
-                "333",
-                "TEST",
-                new Date(),
-                false,
-                false,
-                "TEST",
-                "TEST",
-                "TEST",
-                new Date(),
-                1l,
-                "TEST",
-                "TEST",
-                "TEST",
-                "TEST",
-                "TEST",
-                "TEST");
+        SchedulingEventModel model = null;
+        try {
+            if (webId == model.getWebId()) {
+                return new SchedulingEventModel(
+                        1l,
+                        "New event",
+                        "333",
+                        "TEST",
+                        new Date(),
+                        false,
+                        false,
+                        "TEST",
+                        "TEST",
+                        "TEST",
+                        new Date(),
+                        1l,
+                        "TEST",
+                        "TEST",
+                        "TEST",
+                        "TEST",
+                        "TEST",
+                        "TEST");
+            }
+        } catch (ExceptionHandler exc) {
+            throw new ExceptionHandler("Appointment Id Not Found", exc);
+        }
+        return null;
     }
 //    @GetMapping("/recurrence/list")
 //    public List<SchedulingEventModel> getAllRecurring() {
