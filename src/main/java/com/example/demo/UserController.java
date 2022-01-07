@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 //TODO path to the test
@@ -14,7 +15,7 @@ public class UserController {
 
     @GetMapping("/list")
     public List<UserModel> get() {
-        return Collections.singletonList(new UserModel(1l,
+        return Collections.singletonList(new UserModel(1L,
                 "Test",
                 "Model",
                 "9898",
@@ -26,7 +27,7 @@ public class UserController {
                 "+92",
                 "Male",
                 new Date(),
-                new AddressModel(2980l,
+                new AddressModel(2980L,
                         "street",
                         "USA",
                         "California",
@@ -43,8 +44,8 @@ public class UserController {
     public Boolean deleteById(@PathVariable("id") Long webId) {
         UserModel model = null;
         try {
-            if (webId == model.getWebId()) {
-                return true;
+            if (model != null) {
+                return Objects.equals(webId, model.getWebId());
             }
         } catch (ExceptionHandler exc) {
             throw new ExceptionHandler("User Id Not Found", exc);
@@ -56,7 +57,8 @@ public class UserController {
     public UserModel update(@PathVariable("id") Long webId, @RequestBody UserModel model) {
         UserModel userModel = null;
         try {
-            if (webId == userModel.getWebId()) {
+            assert userModel != null;
+            if (Objects.equals(webId, userModel.getWebId())) {
 //                TODO Updating will go here
                 return model;
             }
@@ -70,8 +72,9 @@ public class UserController {
     public UserModel getById(@PathVariable("id") Long webId) {
         UserModel model = null;
         try {
-            if (webId == model.getWebId()) {
-                return new UserModel(1l,
+            assert model != null;
+            if (Objects.equals(webId, model.getWebId())) {
+                return new UserModel(1L,
                         "Test",
                         "Model",
                         "9898",
@@ -83,7 +86,7 @@ public class UserController {
                         "+92",
                         "Male",
                         new Date(),
-                        new AddressModel(2980l,
+                        new AddressModel(2980L,
                                 "street",
                                 "USA",
                                 "California",

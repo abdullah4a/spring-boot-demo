@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 
@@ -13,7 +14,7 @@ public class CustomerController {
 
     @GetMapping("/list")
     public List<CustomerModel> getAll() {
-        return Collections.singletonList(new CustomerModel(1l,
+        return Collections.singletonList(new CustomerModel(1L,
                 "TestModel",
                 "3213121",
                 "Test",
@@ -23,7 +24,7 @@ public class CustomerController {
                 "Male",
                 "+9265146",
                 true,
-                new AddressModel(2980l,
+                new AddressModel(2980L,
                         "street",
                         "USA",
                         "California",
@@ -41,8 +42,8 @@ public class CustomerController {
     public Boolean deleteById(@PathVariable("id") Long webId) {
         CustomerModel model=null;
         try {
-            if (webId == model.getWebId()) {
-                return true;
+            if ( model != null) {
+                return Objects.equals(webId, model.getWebId());
             }
         } catch (ExceptionHandler exc) {
             throw new ExceptionHandler("Customer Id Not Found", exc);
@@ -54,7 +55,8 @@ public class CustomerController {
     public CustomerModel update(@PathVariable("id") Long webId, @RequestBody CustomerModel model) {
         CustomerModel customerModel=null;
         try {
-            if (webId == customerModel.getWebId()) {
+            assert customerModel != null;
+            if (Objects.equals(webId, customerModel.getWebId())) {
 //                TODO updating of model will go here
                 return model;
             }
@@ -66,7 +68,7 @@ public class CustomerController {
 
     @GetMapping("/{id}")
     public CustomerModel getById(@PathVariable("id") Long webId) {
-        return new CustomerModel(1l,
+        return new CustomerModel(1L,
                 "TestModel",
                 "3213121",
                 "Test",
@@ -76,7 +78,7 @@ public class CustomerController {
                 "Male",
                 "+9265146",
                 true,
-                new AddressModel(2980l,
+                new AddressModel(2980L,
                         "street",
                         "USA",
                         "California",
