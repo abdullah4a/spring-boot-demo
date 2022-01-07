@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 
@@ -17,7 +18,7 @@ public class SchedulingEventController {
 
     @GetMapping("/list")
     public List<SchedulingEventModel> getAllNonRecurring() {
-        return Collections.singletonList(new SchedulingEventModel(1l,
+        return Collections.singletonList(new SchedulingEventModel(1L,
                 "New event",
                 "333",
                 "TEST",
@@ -28,7 +29,7 @@ public class SchedulingEventController {
                 "",
                 "",
                 new Date(),
-                1l,
+                1L,
                 "TEST",
                 "TEST",
                 "TEST",
@@ -41,8 +42,8 @@ public class SchedulingEventController {
     public Boolean deleteNonRecurring(@PathVariable("id") Long webId) {
         SchedulingEventModel model = null;
         try {
-            if (webId == model.getWebId()) {
-                return true;
+            if (model != null) {
+                return Objects.equals(webId, model.getWebId());
             }
         } catch (ExceptionHandler exc) {
             throw new ExceptionHandler("Appointment Id Not Found", exc);
@@ -54,7 +55,8 @@ public class SchedulingEventController {
     public SchedulingEventModel updateNonRecurring(@PathVariable("id") Long webId, @RequestBody SchedulingEventModel model) {
         SchedulingEventModel schedulingEventModel = null;
         try {
-            if (webId == schedulingEventModel.getWebId()) {
+            assert schedulingEventModel != null;
+            if (Objects.equals(webId, schedulingEventModel.getWebId())) {
                 return model;
             }
         } catch (ExceptionHandler exc) {
@@ -67,9 +69,10 @@ public class SchedulingEventController {
     public SchedulingEventModel getByIdNonRecurring(@PathVariable("id") Long webId) {
         SchedulingEventModel model = null;
         try {
-            if (webId == model.getWebId()) {
+            assert model != null;
+            if (Objects.equals(webId, model.getWebId())) {
                 return new SchedulingEventModel(
-                        1l,
+                        1L,
                         "New event",
                         "333",
                         "TEST",
@@ -80,7 +83,7 @@ public class SchedulingEventController {
                         "TEST",
                         "TEST",
                         new Date(),
-                        1l,
+                        1L,
                         "TEST",
                         "TEST",
                         "TEST",
