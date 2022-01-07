@@ -14,6 +14,9 @@ public class BranchModel {
     private Boolean active;
     private AddressModel address;
 
+    public BranchModel() {
+    }
+
     public BranchModel(Long webId, String fullBranchName, String branchNumber, String companyId, String faxNumber, String description, String email, String url, String phoneNumber, Boolean active, AddressModel address) {
         this.webId = webId;
         this.fullBranchName = fullBranchName;

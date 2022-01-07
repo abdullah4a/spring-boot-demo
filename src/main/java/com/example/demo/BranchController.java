@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 
@@ -16,7 +17,7 @@ public class BranchController {
 
     @GetMapping("/list")
     public List<BranchModel> getAll() {
-        return Collections.singletonList(new BranchModel(1l,
+        return Collections.singletonList(new BranchModel(1L,
                 "Test",
                 "Model",
                 "3213121",
@@ -26,7 +27,7 @@ public class BranchController {
                 "testBranch.com",
                 "+9265146",
                 true,
-                new AddressModel(2980l,
+                new AddressModel(2980L,
                         "street",
                         "USA",
                         "California",
@@ -34,12 +35,13 @@ public class BranchController {
                 )));
     }
 
+    //http://localhost:8080/branch/6
     @DeleteMapping("/{id}")
     public Boolean deleteById(@PathVariable("id") Long webId) {
-        BranchModel model=null;
+        BranchModel model = new BranchModel();
         try {
-            if (webId == model.getWebId()) {
-                return true;
+            if (model != null) {
+                return Objects.equals(webId, model.getWebId());
             }
         } catch (ExceptionHandler exc) {
             throw new ExceptionHandler("Branch Id Not Found", exc);
@@ -48,11 +50,12 @@ public class BranchController {
     }
 
     @GetMapping("/{id}")
-    public BranchModel getById(@PathVariable("id") Long webId) {
-        BranchModel model=null;
+    public BranchModel getById(@PathVariable Long id) {
+        BranchModel model = null;
         try {
-            if (webId == model.getWebId()) {
-                return new BranchModel(1l,
+            assert model != null;
+            if (model.getWebId().equals(id)) {
+                return new BranchModel(1L,
                         "Test",
                         "Model",
                         "3213121",
@@ -62,7 +65,7 @@ public class BranchController {
                         "testBranch.com",
                         "+9265146",
                         true,
-                        new AddressModel(2980l,
+                        new AddressModel(2980L,
                                 "street",
                                 "USA",
                                 "California",
@@ -77,9 +80,9 @@ public class BranchController {
 
     @PutMapping("/{id}")
     public BranchModel update(@PathVariable("id") Long webId, @RequestBody BranchModel model) {
-        BranchModel branchModel=null;
+        BranchModel branchModel = null;
         try {
-            if (webId == model.getWebId()) {
+            if (Objects.equals(webId, model.getWebId())) {
 //                TODO updating of branch left
                 return model;
 
