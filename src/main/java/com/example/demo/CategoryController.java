@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 
@@ -14,7 +15,7 @@ public class CategoryController {
     @GetMapping("/list")
     public List<CategoryModel> getAll() {
         return Collections.singletonList(new CategoryModel(
-                1l,
+                1L,
                 "3213",
                 "TEST",
                 "MODEL"));
@@ -25,7 +26,7 @@ public class CategoryController {
     public CategoryModel getById(@PathVariable("id") Long webId) {
         CategoryModel model=null;
         try {
-            if (webId == model.getWebId()) {
+            if (Objects.equals(webId, model.getWebId())) {
                 return new CategoryModel(model.getWebId(),
                         "3654", "TEST CATEGORY", "TEST SUBCATEGORY");
             }
@@ -44,8 +45,8 @@ public class CategoryController {
     public Boolean deleteById(@PathVariable("id") Long webId) {
         CategoryModel model = null;
         try {
-            if (webId == model.getWebId()) {
-                return true;
+            if (model != null) {
+                return Objects.equals(webId, model.getWebId());
             }
         } catch (ExceptionHandler exc) {
             throw new ExceptionHandler("Category Id Not Found", exc);
@@ -57,7 +58,8 @@ public class CategoryController {
     public CategoryModel update(@PathVariable("id") Long webId, @RequestBody CategoryModel model) {
         CategoryModel categoryModel = null;
         try {
-            if (webId == categoryModel.getWebId()) {
+            assert false;
+            if (Objects.equals(webId, categoryModel.getWebId())) {
 //                TODO Updating the Model remaining
                 return model;
             }
